@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <span>Dream Vehicles</span>
+     <a mat-button routerLink="/home">Home</a>
+     <a mat-button routerLink="/registration">Registration</a>
+     <a mat-button routerLink="/admin">Admin Dashboard</a>
+     <a mat-button routerLink="/user">User DashBorad</a>
+     <section>
+        <div>
+          <button  *ngIf="!isLoggedIn()" mat-raised-button color="accent"routerLink="/login">Login</button>
+          <button  *ngIf="isLoggedIn()"  mat-raised-button color="warn" (click)="logOut()">LogOut</button>
+        </div>
+      </section>
+   </mat-toolbar>
+   <router-outlet></router-outlet>

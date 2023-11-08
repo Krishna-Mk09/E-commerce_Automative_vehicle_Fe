@@ -1,0 +1,15 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Hi User</a>
+    <div class="cart">
+     <a routerLink="/cart"> <button class="btn btn-primary">
+      <span class="material-icons">shopping_cart</span>
+      <div class="badge bg-danger">{{ orderCounts }}</div>
+    </button></a>
+    </div>
+  </nav>
+</header>
+<app-userview></app-userview>
+<!-- <app-userview (emmiter)="orderCounterReceiveFunc($event)"></app-userview> -->
+<!-- <a routerLink="userview"><h1>Our Cars</h1></a> -->
+<router-outlet></router-outlet>

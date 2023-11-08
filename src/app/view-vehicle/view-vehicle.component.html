@@ -1,0 +1,27 @@
+<h1>Our Cars</h1>
+<div class="grid-container">
+  <div  class="vehicle" *ngFor="let vehicle of vehicles">
+    <div class="main">
+      <div class="card">
+        <div class="image">
+    <img
+      src="../../assets/{{ vehicle.vehicleName }}.jpeg"
+      style="width: 100%"
+    />
+  </div>
+    {{ vehicle.vehicleID }}
+    <div class="title">
+    <h1>{{ vehicle.vehicleName }}</h1>
+  </div>
+  <div class="des">
+    <p>from {{ vehicle.company }}</p>
+    <p>${{ vehicle.price }}</p>
+    <p>{{ vehicle.color }}</p>
+    <button mat-raised-button color="accent">
+      <a routerLink="/admin/edit/{{ vehicle.vehicleID }}">edit Vehicle</a>
+    </button>
+  </div>
+</div>
+</div>
+</div>
+</div>

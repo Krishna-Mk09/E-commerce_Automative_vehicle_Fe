@@ -1,0 +1,38 @@
+<p>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>Add Vehicle</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</p>
+<div class="logo">
+    add the Vehicle by providing your details
+</div>
+<div>
+    <form  (ngSubmit)="onSubmit()" >
+        <fieldset class="backcolor">
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="vehicle ID" type="number" id="vehicleID" name="vehicleID" [(ngModel)]="vehicleObject.vehicleID"/>
+            </mat-form-field> 
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="vehicle name" type="text" id="vehicleName" name="vehicleName" [(ngModel)]="vehicleObject.vehicleName"/>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="vehicle company" type="text" id="company" name="company" [(ngModel)]="vehicleObject.company"/>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="vehicle price" type="number" id="price" name="price" [(ngModel)]="vehicleObject.price"/>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="vehicle color" type="text" id="color" name="color" [(ngModel)]="vehicleObject.color"/>
+            </mat-form-field>
+      
+
+            <button color="primary" mat-button mat-raised-button 
+                type="submit">Submit</button>
+            <button color="accent" mat-button mat-raised-button type="reset">Reset</button>
+           
+        </fieldset>
+    </form>
+</div>
+

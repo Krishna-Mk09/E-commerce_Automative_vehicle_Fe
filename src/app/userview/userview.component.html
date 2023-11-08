@@ -1,0 +1,24 @@
+<div class="grid-container">
+    <div class="grid-item" class="vehicle" *ngFor="let vehicle of vehicles">
+        <div class="main">
+            <div class="card">
+                <div class="image">
+        <img src="../../assets/{{ vehicle.vehicleName }}.jpeg"  /></div>
+        {{ vehicle.vehicleID }}
+        <div class="title">
+       <h1>{{ vehicle.vehicleName }}</h1>
+    </div>
+       <div class="des">
+        <p>from {{vehicle.company}}</p>
+        <p>${{ vehicle.price }}</p>
+        <p>{{ vehicle.color }}</p>
+        <button mat-raised-button  color="accent" (click)="addToCart(vehicle)">Add to Cart</button>
+    </div>
+</div>
+</div>
+    </div>
+  </div>
+
+
+
+

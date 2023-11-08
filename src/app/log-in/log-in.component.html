@@ -1,0 +1,27 @@
+<p>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Log In</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</p>
+<div class="logo">Fill the login form by providing your details</div>
+<div>
+  <form #logInForm="ngForm" (ngSubmit)="onSubmit(logInForm)">
+    <fieldset class="backcolor">
+      <mat-form-field appearance="fill">
+        <input ngModel matInput placeholder="username" type="text" id="username" name="username" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <input ngModel matInput type="password" placeholder="Password" id="password" name="password" />
+      </mat-form-field>
+
+      <button color="primary" mat-button mat-raised-button type="submit">
+        Submit
+      </button>
+      <button color="accent" mat-button mat-raised-button type="reset">
+        Reset
+      </button>
+    </fieldset>
+  </form>
+</div>

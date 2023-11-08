@@ -1,0 +1,46 @@
+<ng-container *ngIf="products.length != 0">
+  <div class="card-table">
+    <div class="card">
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th>Sr no</th>
+            <th>Car Name</th>
+            <th>comapny</th>
+            <th>color</th>
+            <th>price</th>
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ product.vehicleName }}</td>
+            <td>{{ product.company }}</td>
+            <td>{{ product.color }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+              <button (click)="removeProduct(product)" class="btn btn-danger">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="products.length == 0">
+  <div class="container">
+    <div class="card">
+      <h2>My Cart</h2>
+    </div>
+    <div class="center">
+      <h5>Your cart is empty</h5>
+      <h6>Add item to it now</h6>
+      <button routerLink="/user" mat-raised-button color="primary">
+        Shop now
+      </button>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,81 @@
+<p>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>User Profile Form</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</p>
+<div class="logo">
+    Fill the form by providing your details
+</div>
+<div>
+    <form class="form" (ngSubmit)="onSubmit()" [formGroup]="profileForm">
+        <fieldset class="backcolor">
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="First Name" type="text" id="firstName" formControlName="firstName" [(ngModel)]="userObject.firstName"/>
+                <mat-error *ngIf="firstName?.errors?.['required']">
+                    First Name is required.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="Last Name" type="text" id="lastName" formControlName="lastName" [(ngModel)]="userObject.lastName" />
+                <mat-error *ngIf="lastName?.errors?.['required']">
+                    Last Name is required.
+                </mat-error>
+                <mat-error *ngIf="lastName?.errors?.['minlength']">
+                    Last Name should have minimum of 2 characters.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="username" type="text" id="username" formControlName="username"[(ngModel)]="userObject.username" />
+                <mat-error *ngIf="username?.errors?.['required']">
+                    username is required.
+                </mat-error>
+                <mat-error *ngIf="lastName?.errors?.['minlength']">
+                    username  should have minimum of 2 characters.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <input matInput type="password" placeholder="Password" id="password" formControlName="password">
+                <mat-error *ngIf="password?.errors?.['required']">
+                    Password is required.
+                </mat-error>
+                <mat-error *ngIf="password?.errors?.['pattern']">
+                    Password should have min 8 letter password, with at least a symbol, upper and lower case letters
+                    and a number.
+                </mat-error>
+
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <input matInput type="password" placeholder="Confirm Password" id="confirmPassword"
+                    formControlName="confirmPassword" [(ngModel)]="userObject.password">
+                <mat-error *ngIf="profileForm.errors?.['mustMatch']===false">
+                    Password and Confirm Password should match.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="role" type="text" id="role" formControlName="role"[(ngModel)]="userObject.role" />
+                <mat-error *ngIf="role?.errors?.['required']">
+                    role is required.
+                </mat-error>
+                <mat-error *ngIf="role?.errors?.['minlength']">
+                    role should have minimum of 2 characters.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="address" type="text" id="address" formControlName="address"[(ngModel)]="userObject.address" />
+                <mat-error *ngIf="address?.errors?.['required']">
+                     address is required.
+                </mat-error>
+            </mat-form-field>
+
+           
+            <button color="accent" mat-button mat-raised-button type="reset">Reset</button>
+            <button color="primary" mat-button mat-raised-button 
+                type="submit">Submit</button>
+        </fieldset>
+    </form>
+</div>
+
